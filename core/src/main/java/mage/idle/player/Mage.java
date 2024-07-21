@@ -17,16 +17,16 @@ public class Mage {
 
     public Mage(MageIdle game) {
         this.game = game;
-        this.mageImage = new Texture(Gdx.files.internal(ApplicationAssets.BUCKET_DROP_IMAGE));
+        this.mageImage = new Texture(Gdx.files.internal(ApplicationAssets.MAGE_IMAGE));
         this.initMage();
     }
 
     public void initMage() {
         this.mage = new Rectangle();
-        this.mage.width = 194;
-        this.mage.height = 64;
-        this.mage.x = (800 - this.mage.width) / 2;
-        this.mage.y = 20;
+        this.mage.width = 120;
+        this.mage.height = 40;
+        this.mage.x = 100;
+        this.mage.y = 100;
     }
 
     public void renderMage() {
