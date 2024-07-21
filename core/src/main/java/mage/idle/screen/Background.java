@@ -45,10 +45,8 @@ public class Background {
             backgroundSprite2.setX(backgroundSprite1.getX() + backgroundSprite1.getWidth());
         }
 
-        game.batch.begin();
         backgroundSprite1.draw(game.batch);
         backgroundSprite2.draw(game.batch);
-        game.batch.end();
     }
 
     public void dispose() {

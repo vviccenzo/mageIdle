@@ -9,33 +9,40 @@ import mage.idle.player.Mage;
 
 public class GameScreen implements Screen {
 
-    private final MageIdle game;
-
     private final Mage mage;
-
+    private final MageIdle game;
     private final Background background;
-
     private final OrthographicCamera camera;
+
 
     public GameScreen(final MageIdle game) {
         this.game = game;
         this.mage = new Mage(game);
         this.background = new Background(game);
-        this.background.initAssets();
         this.camera = new OrthographicCamera();
         this.camera.setToOrtho(false, 800, 480);
+
     }
 
     @Override
     public void show() {
+        this.mage.show();
     }
 
     @Override
     public void render(float delta) {
         this.clearScreen();
         this.updateCamera();
+        this.batchDraw(delta);
+    }
+
+    private void batchDraw(float delta) {
+        this.game.batch.begin();
+
         this.background.renderBackground(delta);
-        this.mage.renderMage();
+        this.mage.renderMage(delta);
+
+        this.game.batch.end();
     }
 
     private void clearScreen() {
@@ -43,8 +50,8 @@ public class GameScreen implements Screen {
     }
 
     private void updateCamera() {
-        this.camera.update();
-        this.game.batch.setProjectionMatrix(camera.combined);
+        camera.update();
+        game.batch.setProjectionMatrix(camera.combined);
     }
 
     @Override
@@ -65,7 +72,8 @@ public class GameScreen implements Screen {
 
     @Override
     public void dispose() {
-        this.mage.dispose();
-        this.background.dispose();
+        mage.dispose();
+        background.dispose();
+        game.batch.dispose();
     }
 }
