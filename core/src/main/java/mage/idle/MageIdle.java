@@ -5,9 +5,8 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import mage.idle.screen.GameScreen;
-import mage.idle.screen.MainMenuScreen;
 
-public class Mage extends Game {
+public class MageIdle extends Game {
 
     public SpriteBatch batch;
 
@@ -15,7 +14,7 @@ public class Mage extends Game {
 
     public void create() {
         batch = new SpriteBatch();
-        font = new BitmapFont(); // use libGDX's default Arial font
+        font = new BitmapFont();
         this.setScreen(new GameScreen(this));
     }
 

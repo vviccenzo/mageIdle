@@ -3,7 +3,7 @@ package mage.idle.lwjgl3;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 
-import mage.idle.Mage;
+import mage.idle.MageIdle;
 
 /** Launches the desktop (LWJGL3) application. */public class Lwjgl3Launcher {
     public static void main (String[] arg) {
@@ -12,6 +12,6 @@ import mage.idle.Mage;
         config.setWindowedMode(800, 480);
         config.useVsync(true);
         config.setForegroundFPS(60);
-        new Lwjgl3Application(new Mage(), config);
+        new Lwjgl3Application(new MageIdle(), config);
     }
 }

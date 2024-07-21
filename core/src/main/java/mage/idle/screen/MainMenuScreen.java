@@ -5,17 +5,17 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-import mage.idle.Mage;
+import mage.idle.MageIdle;
 import mage.idle.settings.ApplicationSettings;
 import mage.idle.settings.ApplicationText;
 
 public class MainMenuScreen implements Screen {
 
-    private final Mage game;
+    private final MageIdle game;
 
     private final OrthographicCamera camera;
 
-    public MainMenuScreen(final Mage game) {
+    public MainMenuScreen(final MageIdle game) {
         this.game = game;
 
         camera = new OrthographicCamera();

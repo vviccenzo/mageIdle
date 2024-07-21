@@ -5,7 +5,7 @@ import android.os.Bundle;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 
-import mage.idle.Mage;
+import mage.idle.MageIdle;
 
 public class AndroidLauncher extends AndroidApplication {
 
@@ -15,7 +15,7 @@ public class AndroidLauncher extends AndroidApplication {
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         config.useAccelerometer = false;
         config.useCompass = false;
-        initialize(new Mage(), config);
+        initialize(new MageIdle(), config);
     }
 
 }
