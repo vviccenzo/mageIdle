@@ -6,6 +6,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 import mage.idle.MageIdle;
 import mage.idle.player.Mage;
+import mage.idle.settings.ApplicationSettings;
 
 public class GameScreen implements Screen {
 
@@ -14,14 +15,12 @@ public class GameScreen implements Screen {
     private final Background background;
     private final OrthographicCamera camera;
 
-
     public GameScreen(final MageIdle game) {
         this.game = game;
         this.mage = new Mage(game);
         this.background = new Background(game);
         this.camera = new OrthographicCamera();
-        this.camera.setToOrtho(false, 800, 480);
-
+        this.camera.setToOrtho(false, ApplicationSettings.CAMERA_SCREEN_WIDTH, ApplicationSettings.SCREEN_HEIGHT);
     }
 
     @Override
