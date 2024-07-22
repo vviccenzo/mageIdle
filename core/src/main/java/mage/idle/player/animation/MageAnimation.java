@@ -13,7 +13,7 @@ public class MageAnimation {
 
     private boolean wasTouchedLastFrame = false;
 
-    public Animation<TextureRegion> checkMageAnimation(Animation<TextureRegion> mageAnimation) {
+    public Animation<TextureRegion> checkMageAnimationMovement(Animation<TextureRegion> mageAnimation, boolean isAfterKillEnemy) {
 
         Animation<TextureRegion> mageAnimationNew = mageAnimation;
 
@@ -25,6 +25,10 @@ public class MageAnimation {
             } else {
                 mageAnimationNew = AnimationUtils.createAnimation(ApplicationAnimation.MAGE_ANIMATION_RUN, 8, 1, 0.1f);
             }
+        }
+
+        if(isAfterKillEnemy) {
+            mageAnimationNew = AnimationUtils.createAnimation(ApplicationAnimation.MAGE_ANIMATION_RUN, 8, 1, 0.1f);
         }
 
         wasTouchedLastFrame = Gdx.input.isTouched();

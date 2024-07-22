@@ -4,7 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import mage.idle.screen.GameScreen;
+import mage.idle.screen.definition.GameScreen;
 
 public class MageIdle extends Game {
 
@@ -19,7 +19,7 @@ public class MageIdle extends Game {
     }
 
     public void render() {
-        super.render(); // important!
+        super.render();
     }
 
     public void dispose() {
